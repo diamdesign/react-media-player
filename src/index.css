@@ -2,10 +2,13 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 :root {
+	--darker: rgba(16, 30, 48, 0.665);
 	--color: #16273edb;
+	--light: #16273e5d;
 }
 
 html,
@@ -30,18 +33,52 @@ body,
 #player-container {
 	width: 60rem;
 	height: 35rem;
+	backdrop-filter: blur(1.5rem);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
 .playlist {
 	height: 100%;
-	padding: 2rem;
-	background-color: var(--color);
+
 	overflow-y: auto;
+	scrollbar-width: thin;
+	scrollbar-color: var(--color) rgba(255, 255, 255, 0.2);
+}
+
+.list {
+	background-color: var(--color);
+	display: grid;
+	grid-template-columns: 1fr 8fr 1fr;
+	padding: 1rem;
+	border-bottom: 1px solid var(--darker);
+}
+
+.list:hover {
+	cursor: pointer;
+}
+
+.active {
+	background-color: var(--light);
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.info span {
+	color: rgba(255, 255, 255, 0.5);
+	margin: 5px 0;
 }
 
 .image {
+	margin-left: 0.5rem;
 	width: 4rem;
 	height: 4rem;
+	border: 2px solid white;
+	box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.4);
 }
 
 .image img {

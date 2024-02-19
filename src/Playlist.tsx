@@ -12,9 +12,9 @@ interface PlaylistProps {
 export function Playlist({ contentArray }: PlaylistProps) {
 	return (
 		<div className="playlist-container">
-			{contentArray.map((list) => {
+			{contentArray.map((list, index) => {
 				return (
-					<div key={list.id} className="list">
+					<div key={list.id} className={`list ${index === 0 ? "active" : ""}`}>
 						<div className="image">
 							<img src={list.image} alt="" />
 						</div>
