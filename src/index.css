@@ -1,0 +1,51 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--color: #16273edb;
+}
+
+html,
+body,
+#root {
+	width: 100%;
+	height: 100%;
+	color: white;
+	background-color: var(--color);
+}
+
+#root {
+	background-image: url("https://picsum.photos/1920/1080");
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#player-container {
+	width: 60rem;
+	height: 35rem;
+}
+
+.playlist {
+	height: 100%;
+	padding: 2rem;
+	background-color: var(--color);
+	overflow-y: auto;
+}
+
+.image {
+	width: 4rem;
+	height: 4rem;
+}
+
+.image img {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
