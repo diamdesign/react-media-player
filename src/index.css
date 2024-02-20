@@ -6,9 +6,9 @@
 }
 
 :root {
-	--darker: rgba(6, 27, 58, 0.665);
+	--darker: rgba(5, 30, 67, 0.743);
 	--color: #072246db;
-	--light: #0826505d;
+	--light: #0826507d;
 }
 
 html,
@@ -52,9 +52,9 @@ body,
 	width: 55rem;
 	height: 45rem;
 	max-height: 55rem;
-	backdrop-filter: blur(1.5rem);
+	backdrop-filter: blur(1rem);
 	border: 1px solid rgba(255, 255, 255, 0.1);
-	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6), 0 16px 34px rgba(0, 0, 0, 0.4);
 }
 
 .playlist {
@@ -109,13 +109,13 @@ body,
 	background-color: var(--light);
 }
 
-.info {
+.playlist .info {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
 
-.info span {
+.playlist .info span {
 	color: rgba(255, 255, 255, 0.5);
 	margin: 5px 0;
 }
@@ -138,8 +138,23 @@ body,
 	grid-area: player;
 	display: flex;
 	flex-direction: column;
-	margin: 2rem 3rem;
-	width: 21rem;
+	padding: 2rem 3rem;
+	width: 27rem;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+}
+
+.player:after {
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	background: linear-gradient(0deg, rgb(15, 37, 65) 0%, rgba(23, 38, 58, 0) 100%);
+	content: "";
+	left: 0;
+	top: 0;
 }
 
 .bigthumb {
@@ -185,6 +200,69 @@ body,
 .submenu:hover,
 .backbtn:hover {
 	opacity: 1;
+}
+
+.player .info {
+	text-align: center;
+}
+
+.player .song {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 8fr 1fr;
+}
+
+.player .time {
+	justify-content: center;
+	align-items: center;
+	display: grid;
+	grid-template-columns: 1fr 8fr 1fr;
+}
+
+.player .time-container {
+	height: 6px;
+	background-color: var(--darker);
+	border-radius: 5rem;
+	margin: 1rem;
+	position: relative;
+}
+
+.player .timelapsed {
+	width: 3rem;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 5rem;
+	background-color: white;
+}
+
+.player .info span {
+	opacity: 0.5;
+}
+
+.player .controls {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.play span {
+	font-size: 4rem;
+	padding: 1rem;
+}
+
+.reverse span,
+.forwards span {
+	font-size: 2rem;
+}
+
+.shuffle {
+	margin-left: 3rem;
+}
+
+.repeat {
+	margin-right: 3rem;
 }
 
 .material-symbols-outlined {

@@ -78,6 +78,42 @@ export function App() {
 					<div className="bigthumb">
 						<img src="https://picsum.photos/1920/1080" alt="" />
 					</div>
+					<div className="song">
+						<a href="#" className="add">
+							<span className="material-symbols-outlined">add_circle</span>
+						</a>
+						<div className="info">
+							<p>A Rocket to the moon</p>
+							<span>Like we used to</span>
+						</div>
+						<a href="#" className="heart">
+							<span className="material-symbols-outlined">favorite</span>
+						</a>
+					</div>
+					<div className="time">
+						<span>0:40</span>
+						<div className="time-container">
+							<div className="timelapsed"></div>
+						</div>
+						<span>3:42</span>
+					</div>
+					<div className="controls">
+						<a href="#" className="repeat">
+							<span className="material-symbols-outlined">repeat</span>
+						</a>
+						<a href="#" className="reverse">
+							<span className="material-symbols-outlined">fast_rewind</span>
+						</a>
+						<a href="#" className="play">
+							<span className="material-symbols-outlined">play_circle</span>
+						</a>
+						<a href="#" className="forwards">
+							<span className="material-symbols-outlined">fast_forward</span>
+						</a>
+						<a href="#" className="shuffle">
+							<span className="material-symbols-outlined">shuffle</span>
+						</a>
+					</div>
 				</div>
 			</div>
 		</>
