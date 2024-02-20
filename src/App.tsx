@@ -17,7 +17,7 @@ export function App() {
 		},
 		{
 			id: 2,
-			artist: "John LEgend",
+			artist: "John Legend",
 			title: "Save the moon",
 			image: "https://picsum.photos/80/80",
 		},
@@ -45,16 +45,40 @@ export function App() {
 			title: "Shots (Broken Remix)",
 			image: "https://picsum.photos/82/82",
 		},
+		{
+			id: 7,
+			artist: "Imagine Dragons",
+			title: "Shots",
+			image: "https://picsum.photos/83/83",
+		},
+		{
+			id: 8,
+			artist: "Imagine Dragons",
+			title: "Shots (Remix)",
+			image: "https://picsum.photos/84/85",
+		},
 	];
 
 	return (
 		<>
 			<div id="player-container">
-				<div className="header"></div>
+				<div className="header">
+					<a href="#" className="backbtn">
+						<span className="material-symbols-outlined">arrow_back_ios</span>
+					</a>
+					<p>Playlist - Moody</p>
+					<a href="#" className="submenu">
+						<span className="material-symbols-outlined">more_vert</span>
+					</a>
+				</div>
 				<div className="playlist">
 					<Playlist contentArray={contentArray} />
 				</div>
-				<div className="player"></div>
+				<div className="player">
+					<div className="bigthumb">
+						<img src="https://picsum.photos/1920/1080" alt="" />
+					</div>
+				</div>
 			</div>
 		</>
 	);

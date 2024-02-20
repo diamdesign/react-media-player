@@ -6,9 +6,9 @@
 }
 
 :root {
-	--darker: rgba(16, 30, 48, 0.665);
-	--color: #16273edb;
-	--light: #16273e5d;
+	--darker: rgba(6, 27, 58, 0.665);
+	--color: #072246db;
+	--light: #0826505d;
 }
 
 html,
@@ -30,17 +30,36 @@ body,
 	align-items: center;
 }
 
+.header {
+	font-size: 1.2rem;
+	align-items: center;
+	display: grid;
+	grid-template-columns: 1fr 8fr 1fr;
+	grid-area: header;
+	height: 3.5rem;
+	background-color: var(--color);
+}
+
+.header p {
+	text-align: center;
+}
+
 #player-container {
-	width: 60rem;
-	height: 35rem;
+	display: grid;
+	grid-template-areas:
+		"header header"
+		"playlist player";
+	width: 55rem;
+	height: 45rem;
+	max-height: 55rem;
 	backdrop-filter: blur(1.5rem);
 	border: 1px solid rgba(255, 255, 255, 0.1);
 	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
 .playlist {
+	grid-area: playlist;
 	height: 100%;
-
 	overflow-y: auto;
 	scrollbar-width: thin;
 	scrollbar-color: var(--color) rgba(255, 255, 255, 0.2);
@@ -49,6 +68,7 @@ body,
 .list {
 	background-color: var(--color);
 	display: grid;
+	grid-gap: 0 1rem;
 	grid-template-columns: 1fr 8fr 1fr;
 	padding: 1rem;
 	border-bottom: 1px solid var(--darker);
@@ -56,6 +76,33 @@ body,
 
 .list:hover {
 	cursor: pointer;
+	background-color: var(--darker);
+	animation: flash 0.3s ease-in-out 1 forwards;
+}
+
+.list:hover .image img {
+	animation: imghover 0.5s ease-in-out 1 forwards;
+}
+@keyframes imghover {
+	0% {
+		scale: 1.2;
+	}
+	100% {
+		scale: 1;
+	}
+}
+
+@keyframes flash {
+	0% {
+		filter: brightness(3);
+	}
+	100% {
+		filter: brightness(1);
+	}
+}
+
+.list:hover .info span {
+	text-decoration: underline;
 }
 
 .active {
@@ -85,4 +132,62 @@ body,
 	object-fit: cover;
 	width: 100%;
 	height: 100%;
+}
+
+.player {
+	grid-area: player;
+	display: flex;
+	flex-direction: column;
+	margin: 2rem 3rem;
+	width: 21rem;
+}
+
+.bigthumb {
+	width: 100%;
+	aspect-ratio: 1/1;
+	border: 3px solid white;
+	box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.4);
+}
+
+.bigthumb img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.backbtn {
+	width: 3rem;
+	height: 3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+}
+
+.header a:last-child {
+	justify-self: flex-end;
+}
+
+.submenu {
+	width: 3rem;
+	height: 3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+}
+
+.submenu,
+.backbtn {
+	opacity: 0.5;
+}
+
+.submenu:hover,
+.backbtn:hover {
+	opacity: 1;
+}
+
+.material-symbols-outlined {
+	color: white;
+	font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }
