@@ -81,13 +81,16 @@ body,
 }
 
 .list:hover .image img {
+	color: yellow;
 	animation: imghover 0.5s ease-in-out 1 forwards;
 }
 @keyframes imghover {
 	0% {
+		filter: drop-shadow(0 0 24px yellow);
 		scale: 1.2;
 	}
 	100% {
+		filter: drop-shadow(0 0 0px yellow);
 		scale: 1;
 	}
 }
@@ -252,17 +255,59 @@ body,
 	padding: 1rem;
 }
 
+.play:hover span,
+.reverse:hover span,
+.forwards:hover span,
+.shuffle:hover span,
+.repeat:hover span,
+.heart:hover span,
+.add:hover span,
+.list:hover .icon span {
+	color: yellow;
+	animation: controlhover 0.4s ease-out 1 forwards;
+}
+
+@keyframes controlhover {
+	0% {
+		filter: drop-shadow(0 0 24px yellow);
+	}
+	100% {
+		filter: drop-shadow(0 0 0px yellow);
+	}
+}
+
+.reverse,
+.forwards {
+	padding: 1rem 0;
+}
+
 .reverse span,
 .forwards span {
 	font-size: 2rem;
 }
 
 .shuffle {
+	padding: 1rem 0;
 	margin-left: 3rem;
 }
 
 .repeat {
+	padding: 1rem 0;
 	margin-right: 3rem;
+}
+
+.icon {
+	display: flex;
+	align-items: center;
+	opacity: 0.2;
+}
+
+.list:hover .icon {
+	opacity: 1;
+}
+
+.active .icon {
+	opacity: 1;
 }
 
 .material-symbols-outlined {

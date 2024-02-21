@@ -22,7 +22,9 @@ export function Playlist({ contentArray }: PlaylistProps) {
 							<p>{list.artist}</p>
 							<span>{list.title}</span>
 						</div>
-						<div className="icon"></div>
+						<div className="icon">
+							<span className="material-symbols-outlined">play_circle</span>
+						</div>
 					</div>
 				);
 			})}
